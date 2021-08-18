@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Blog</title>
 </head>
+
 <body>
     <header>
         <div class="menu">
@@ -14,7 +16,7 @@
             <div class="v-divider"></div>
             <a href="index.html" class="page-link">Home</a>
             <a href="#" class="page-link">Blog</a>
-            <a href="#" class="page-link">About Me</a>
+            <a href="about.html" class="page-link">About Me</a>
         </div>
     </header>
     <main>
@@ -24,25 +26,27 @@
                     <div class="element-header">Blog Posts:</div>
                     <div class="element-body-v">
                         <div class="post">
-                            <div class="post-header">
-                                <p class="post-title">Post Name</p>
-                                <p class="post-date">13/08/2021</p>
-                            </div>
-                            <div class="post-body">
-                                <p class="post-description">Post Description</p>
-                                <div class="post-top-divider"></div>
-                                <img src="../media/images/cat.jpg" class="post-image"></img>
-                            </div>
+                            <a href="blogpost.html">
+                                <div class="post-header">
+                                    <p class="post-title">Post Name</p>
+                                    <p class="post-date">13/08/2021</p>
+                                </div>
+                                <div class="post-body">
+                                    <p class="post-description">Post Description</p>
+                                    <div class="post-top-divider"></div>
+                                    <img src="../media/images/cat.jpg" class="post-image"></img>
+                                </div>
+                            </a>
                             <div class="post-footer">
                                 <div class="vote" id="like">
                                     <p>like</p>
                                     <div class="vote-button-divider"></div>
-                                    <p>0</p>
+                                    <p id="likes">0</p>
                                 </div>
                                 <div class="vote" id="dislike">
                                     <p>dislike</p>
                                     <div class="vote-button-divider"></div>
-                                    <p>0</p>
+                                    <p id="dislikes">0</p>
                                 </div>
                             </div>
                         </div>
@@ -53,10 +57,11 @@
                         <div class="element-header">Useless Component:</div>
                         <div class="element-body-v">
                             <p class="themes" style="margin-bottom: 150px;">Useless information</p>
-                            <button class="button">Useless Button</button>
+                            <button class="button" id="usl_btn">Useless Button</button>
                         </div>
-                    </div>
-                    <div class="element">
+                    </div>  
+                    <div class="element hidden" style="transition: 0.2s;" id="info">
+                        <div class="element-header">Useless info:</div>
                         <div class="element-body-v">
                             <p class="text">More useless information</p>
                         </div>
@@ -65,5 +70,14 @@
             </div>
         </div>
     </main>
+    <script src="vote.js"></script>
+    <script>
+        'use strict'
+
+        usl_btn.addEventListener('click', function(e) {
+            info.classList.toggle("hidden")
+        })
+    </script>
 </body>
+
 </html>
