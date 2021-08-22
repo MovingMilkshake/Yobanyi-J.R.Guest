@@ -25,4 +25,4 @@ setTimeout(function (e) {
         likescount -= 10;
         likes.innerHTML = likescount;
     })
-}, 30000)
+}, 15000)
