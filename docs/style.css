@@ -423,7 +423,7 @@ li {
     }
 
     .text {
-        width: 100%;
+        width: auto;
     }
 
     .about-image {
