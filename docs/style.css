@@ -126,6 +126,7 @@ li {
     font-weight: bold;
     width: 260px;
     margin-bottom: 15px;
+    overflow-wrap: break-word;
 }
 
 .button {
@@ -424,7 +425,6 @@ li {
 
     .text {
         width: 100%;
-        max-width: 360px;
     }
 
     .about-image {
