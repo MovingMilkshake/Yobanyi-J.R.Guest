@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap'); 
+{% load static %}
+
+body, h1, h2, h3, p {
+    margin: 0;
+    font-family: Comfortaa; 
+    font-weight: normal;
+}
+
+body {
+    background: rgba(255, 255, 255, 1) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.menu {
+    display: flex;
+    color: white;
+    background: rgba(92, 92, 92, 1);
+    align-items: center;
+    padding: 10px 5px;
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 0px 4px 0px #000000;
+}
+
+.title {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.v-divider {
+    height: 30px;
+    width: 2px;
+    background: white;
+    margin: 0 15px;
+}
+
+.link {
+    color: black;
+    transition: 0.2s;
+}
+
+.link:hover {
+    color: #4380c7;
+    text-decoration: underline;
+}
+
+.page-link {
+    margin-right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+.page-link:hover {
+    color: rgba(196, 196, 196, 1);    
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.element {
+    width: 100%;
+    background: rgba(244, 244, 244, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 2px 4px 0px #000000;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.element-header {
+    height: 50px;
+    background: rgba(255, 223, 252, 1);
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border-bottom: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 10px 10px 0 0;
+}
+
+.element-body-h {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15px;
+}
+
+.element-body-v {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    width: 260px;
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+}
+
+.button {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 15px;
+    background: rgba(255, 223, 252, 1);
+    box-shadow: 2px 4px 0px 0px rgba(0, 0, 0, 1);
+    border: 3px solid rgba(3, 3, 3, 1);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Comfortaa;
+    line-height: 27px;
+    letter-spacing: 0em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    box-shadow: 1px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.button:active {
+    box-shadow: 1px 2px 0px 0px rgba(0, 0, 0, 1) inset;
+}
+
+
+.site-card {
+    display: flex;
+    width: 280px;
+    height: 180px;
+    background: rgba(196, 196, 196, 1) 50%/cover; 
+    background-position: initial;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 1px 2px 0px #000000;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    width: 100%;
+    align-self: flex-end;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    padding-bottom: 25px;
+    color: white;
+    background: rgba(12, 12, 12, 0.6);
+    border-top: 2px solid rgba(0, 0, 0, 1);
+}
+
+
+.news-post {
+    width: 260px;
+    margin-bottom: 25px;
+    background: rgba(244, 244, 244, 1);
+    border-radius: 10px;
+}
+
+.news-post-content {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-post-date {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.news-post-divider {
+    height: 2px;
+    background: black;
+    width: 260px;
+}
+
+
+.post {
+    width: 95%;
+    margin-bottom: 15px;
+    padding: 15px;
+    padding-bottom: 0;
+    color: black;
+    background: rgba(250, 250, 250, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 2px 4px 0px #000000;
+    border-radius: 10px;
+}
+
+.post-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.post-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.post-date {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.post-body {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.post-top-divider {
+    height: 2px;
+    width: 100%;
+    background: black;
+    margin: 40px 0;
+}
+
+.post-image {
+    max-width: 95%;
+    height: auto;
+    max-height: 550px;
+    margin: auto;
+    background: rgba(196, 196, 196, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 2px 4px 0px #000000;
+    border-radius: 10px;
+}
+
+.post-description {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-text {
+    font-size: 24px;
+    font-weight: normal;
+    padding: 0 10px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.post-footer {
+    width: 100%;
+    display: flex;
+    border-top: 2px solid rgba(0, 0, 0, 1);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vote {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid rgba(250, 250, 250, 1);
+    box-shadow: 1px 2px 0px rgba(250, 250, 250, 1);
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+
+.vote:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 1px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.vote:active {
+    box-shadow: 1px 2px 0px rgba(0, 0, 0, 1) inset;
+}
+
+.vote-button-divider {
+    background: rgba(0, 0, 0, 1);
+    height: 100%;
+    width: 1px;
+    margin: 0 10px;
+}
+
+
+.themes {
+    font-size: 24px;
+    font-weight: bold;
+    width: 260px;
+}
+
+
+.about-h-box {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.about-box-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(250, 250, 250, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 2px 4px 0px #000000;
+    border-radius: 10px;
+}
+
+.about-image {
+    max-width: 45%;
+    height: auto;
+    max-height: 350px;
+    margin-bottom: 25px;
+    background: rgba(196, 196, 196, 1);
+    border: 3px solid rgba(0, 0, 0, 1);
+    box-shadow: 2px 4px 0px #000000;
+    border-radius: 10px;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+.flex-reverse {
+    flex-direction: column-reverse;
+}
+
+.half-size {
+    width: 45%;
+}
+
+.spinning-thingy {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 223, 252, 1);
+    margin: 50px auto;
+    border: 3px solid rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    transition: 3s;
+}
+
+.spinning-thingy:hover {
+    transform: rotate(3turn);
+}
+
+.spinning-thingy:active {
+    transform: rotate(3turn);
+}
+
+@media (max-width: 850px) {
+    .container {
+        margin-top: 0;
+        padding: 10px;
+    }
+    
+    .content {
+        flex-direction: column;
+    }
+
+    .element {
+        margin-bottom: 15px;
+    }
+
+    .element-body-h {
+        flex-direction: column;
+    }
+
+    .about-h-box {
+        flex-direction: column;
+    }
+
+    .flex-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .site-card {
+        width: 100%;
+        height: 200px;
+    }
+
+    .v-divider {
+        margin: 0 5px;
+    }
+
+    .post-text {
+        padding: 0;
+
+    }
+
+    .news-post {
+        width: 100%;
+    }
+
+    .news-post-divider {
+        width: 100%;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .about-image {
+        max-width: 100%;
+        max-height: 450px;
+    }
+
+    .half-size {
+        width: auto;
+    }
+}
+
+@media (min-width: 850px) {
+    .details {
+        height: 0;
+        position: sticky;
+        top: 10px;
+    }
+
+    .flex-reverse {
+        flex-direction: row;
+    }
+
+    .left {
+        margin-right: 30px;
+    }
+    
+    .right {
+        margin-left: 30px;
+    }
+}

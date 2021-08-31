@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>Home</title>
 </head>
-<body>
+<body style="background-image: url({% static 'images/background.png' %});">
     <header>
-        <div class="menu">
-            <a href="#" class="title">Yobanyi J.R. Guest</a>
-            <div class="v-divider"></div>
-            <a href="#" class="page-link">Home</a>
-            <a href="#" class="page-link">Blog</a>
-            <a href="#" class="page-link">About Me</a>
-        </div>
+        {% include 'menu.html' %}
     </header>
     <main>
         <div class="container">
             <div class="element">
                 <div class="element-header">My Websites:</div>
                 <div class="element-body-h">
-                    <a href="https://gitlab.informatics.ru/2020-2021/online/s101/group-05/multi-streamer" target="_blank" class="site-card"  style="background-image: url(media/images/ice.svg);">
+                    <a href="https://gitlab.informatics.ru/2020-2021/online/s101/group-05/multi-streamer" target="_blank" class="site-card"  style="background-image: url({% static 'images/ice.svg' %});">
                         <div class="card-title">ICE.Multistreamer</div>
                     </a>
-                    <a href="https://movingmilkshake.github.io/Universal-Power/" target="_blank" class="site-card" style="background-image: url(media/images/power.png);">
+                    <a href="https://movingmilkshake.github.io/Universal-Power/" target="_blank" class="site-card" style="background-image: url({% static 'images/power.png' %});">
                         <div class="card-title">Вселенская Мощь</div>
                     </a>    
-                    <a href="https://gitlab.informatics.ru/2020-2021/online/s101/group-04/simple-votings-2/simple-votings" target="_blank" class="site-card" style="background-image: url(media/images/pollify.svg);">
+                    <a href="https://gitlab.informatics.ru/2020-2021/online/s101/group-04/simple-votings-2/simple-votings" target="_blank" class="site-card" style="background-image: url({% static 'images/pollify.svg' %});">
                         <div class="card-title">Pollify</div>
                     </a>
                 </div>
@@ -55,61 +50,14 @@
                 <div class="element">
                     <div class="element-header">Publications:</div>
                     <div class="element-body-v">
-                        <div class="post">
-                            <a href="posts/What-am-I-writing-here.html">
-                                <div class="post-header">
-                                    <p class="post-title">What am I writing here?</p>
-                                    <p class="post-date">24/08/2021</p>
-                                </div>
-                                <div class="post-body">
-                                    <p class="post-description">Here's the promised post on what I am planning to do with this place.</p>
-                                    <div class="post-top-divider"></div>
-                                    <img src="media/images/hecto.jpg" class="post-image"></img>
-                                </div>
-                            </a>
-                            <div class="post-footer">
-                                <div class="vote" id="like">
-                                    <p>like</p>
-                                    <div class="vote-button-divider"></div>
-                                    <p id="likes">0</p>
-                                </div>
-                                <div class="vote" id="dislike">
-                                    <p>dislike</p>
-                                    <div class="vote-button-divider"></div>
-                                    <p id="dislikes">0</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post">
-                            <a href="posts/Welcome.html">
-                                <div class="post-header">
-                                    <p class="post-title">Welcome!</p>
-                                    <p class="post-date">22/08/2021</p>
-                                </div>
-                                <div class="post-body">
-                                    <p class="post-description">Hello and welcome here, the page that has just been made. Let me tell you about this place.</p>
-                                    <div class="post-top-divider"></div>
-                                    <img src="media/images/cat.jpg" class="post-image"></img>
-                                </div>
-                            </a>
-                            <div class="post-footer">
-                                <div class="vote" id="like">
-                                    <p>like</p>
-                                    <div class="vote-button-divider"></div>
-                                    <p id="likes">0</p>
-                                </div>
-                                <div class="vote" id="dislike">
-                                    <p>dislike</p>
-                                    <div class="vote-button-divider"></div>
-                                    <p id="dislikes">0</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% for post in posts reversed %}
+                            {% include 'post.html' %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="vote.js"></script>
+    <script src="{% static 'vote.js' %}"    ></script>
 </body>
 </html>
