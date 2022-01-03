@@ -1,7 +1,7 @@
 <div class="post">
     <div class="post-header">
         <p class="post-title">{{ post.title }}</p>
-        <p class="post-date">{{ posts.date }}</p>
+        <p class="post-date">{{ post.date|date:'d/m/Y' }}</p>
     </div>
     <div class="post-body">
         <p class="post-description">{{ post.description }}</p>
