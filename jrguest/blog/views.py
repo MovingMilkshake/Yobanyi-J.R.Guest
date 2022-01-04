@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.utils import timezone
 
 # Create your views here.
-from blog.models import Posts
+from blog.models import Post
 from blog.forms import PostForm
 
 
 def get_posts():
-    return Posts.objects.all()
+    return Post.objects.all()
 
 
 def index_page(request):
@@ -29,9 +29,12 @@ def create_post_page(request):
 
     if request.method == 'POST':
         form = PostForm(request.POST)
-        a = form.data['title']
-        b = form.data['description']
-        record = Posts(title=a, description=b, date=timezone.now())
+        title = form.data['title']
+        description = form.data['description']
+        thumbnail = request.FILES.get('thumbnail')
+        text = form.data['text']
+        record = Post(title=title, description=description,
+                       date=timezone.now(), thumbnail=thumbnail, text=text)
         record.save()
         context['form'] = form
     elif request.method == 'GET':

@@ -10,4 +10,8 @@ class PostForm(forms.Form):
                                   widget=forms.TextInput(attrs={
                                       'placeholder': 'Enter text here, but a little longer'
                                   }))
-
+    thumbnail = forms.ImageField()
+    text = forms.CharField(label='Post Text', required=True,
+                                  widget=forms.TextInput(attrs={
+                                      'placeholder': 'Enter text here, but big'
+                                  }))

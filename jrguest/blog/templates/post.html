@@ -5,6 +5,10 @@
     </div>
     <div class="post-body">
         <p class="post-description">{{ post.description }}</p>
+        {% if post.thumbnail %}
+            <div class="post-top-divider"></div>
+            <img src="{{ post.thumbnail.url }}" class="post-image">
+        {% endif %}
     </div>
     <div class="post-footer">
         <div class="vote" id="like">

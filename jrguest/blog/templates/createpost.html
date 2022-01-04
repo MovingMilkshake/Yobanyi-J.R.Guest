@@ -13,10 +13,12 @@
         {% include 'menu.html' %}
     </header>
     <main>
-        <form method="post" action="/create/" style="margin: 50px">
+        <form method="post" enctype="multipart/form-data" action="/create/" style="margin: 50px">
             {% csrf_token %}
             <label>{{ form.title.label }}</label>: {{ form.title }}<br>
             <label>{{ form.description.label }}</label>: {{ form.description }}<br>
+            <label>{{ form.text.label }}</label>: {{ form.text }}<br>
+            {{ form.thumbnail }}<br>
             <input type="submit" value="Create Post">
         </form>
     </main>
