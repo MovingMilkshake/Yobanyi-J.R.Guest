@@ -20,8 +20,8 @@
             <div class="element">
                 <div class="element-header">Blog Posts:</div>
                 <div class="element-body-v">
-                    {% for post in posts reversed %}
-                    {% include 'post.html' %}
+                    {% for post in object_list reversed %}
+                    {% include 'postcard.html' %}
                     {% endfor %}
                 </div>
             </div>
@@ -50,6 +50,7 @@
         usl_btn.addEventListener('click', function(e) {
             info.classList.toggle("hidden")
         })
+
 
 </script>
 </body>

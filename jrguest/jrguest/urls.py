@@ -19,12 +19,13 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from blog.views import index_page, blog_page, create_post_page, about_page
+from blog.views import IndexView, BlogView, PostView, CreatePostView, AboutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_page),
-    path('blog/', blog_page),
-    path('create/', create_post_page),
-    path('about/', about_page),
+    path('', IndexView.as_view(), name='index_page'),
+    path('blog/', BlogView.as_view(), name='blog_page'),
+    path('blog/<int:pk>', PostView.as_view(), name='post_page'),
+    path('create/', CreatePostView.as_view(), name='create_post_page'),
+    path('about/', AboutView.as_view(), name='about_page'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

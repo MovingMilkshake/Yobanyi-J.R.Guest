@@ -9,18 +9,15 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        {% include 'menu.html' %}
-    </header>
-    <main>
-        <form method="post" enctype="multipart/form-data" action="/create/" style="margin: 50px">
-            {% csrf_token %}
-            <label>{{ form.title.label }}</label>: {{ form.title }}<br>
-            <label>{{ form.description.label }}</label>: {{ form.description }}<br>
-            <label>{{ form.text.label }}</label>: {{ form.text }}<br>
-            {{ form.thumbnail }}<br>
-            <input type="submit" value="Create Post">
-        </form>
-    </main>
+<header>
+    {% include 'menu.html' %}
+</header>
+<main>
+    <form method="POST" enctype="multipart/form-data" style="margin: 50px">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Submit</button>
+    </form>
+</main>
 </body>
 </html>

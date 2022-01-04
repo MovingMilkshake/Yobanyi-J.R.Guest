@@ -1,0 +1,27 @@
+<div class="post">
+    <a href="{% url 'post_page' post.pk %}">
+        <div class="post-header">
+            <p class="post-title">{{ post.title }}</p>
+            <p class="post-date">{{ post.date|date:'d/m/Y' }}</p>
+        </div>
+        <div class="post-body">
+            <p class="post-description">{{ post.description }}</p>
+            {% if post.thumbnail %}
+            <div class="post-top-divider"></div>
+            <img src="{{ post.thumbnail.url }}" class="post-image">
+            {% endif %}
+        </div>
+    </a>
+    <div class="post-footer">
+        <div class="vote" id="like">
+            <p>like</p>
+            <div class="vote-button-divider"></div>
+            <p id="likes">0</p>
+        </div>
+        <div class="vote" id="dislike">
+            <p>dislike</p>
+            <div class="vote-button-divider"></div>
+            <p id="dislikes">0</p>
+        </div>
+    </div>
+</div>
