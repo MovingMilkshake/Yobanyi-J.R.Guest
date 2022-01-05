@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, TemplateView, UpdateView, DeleteView
 from .models import Post
 from .forms import PostForm
 
@@ -7,6 +8,10 @@ from .forms import PostForm
 class IndexView(ListView):
     model = Post
     template_name = 'index.html'
+
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
 
 
 class BlogView(ListView):
@@ -25,5 +30,13 @@ class CreatePostView(CreateView):
     template_name = 'createpost.html'
 
 
-class AboutView(TemplateView):
-    template_name = 'about.html'
+class EditPostView(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'editpost.html'
+
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'deletepost.html'
+    success_url = reverse_lazy('index_page')

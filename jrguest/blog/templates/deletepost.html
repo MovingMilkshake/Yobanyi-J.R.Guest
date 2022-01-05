@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Create Post {% endblock %}
+{% block title %} Delete Post {% endblock %}
 
 {% block content %}
 
 <div class="content flex-reverse">
     <div class="element">
-        <div class="element-header">Create Blog Post:</div>
+        <div class="element-header">Delete Blog Post:</div>
         <div class="element-body-v">
             <form class="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button class="button">Post</button>
+                <div class="post">
+                    <p class="post-title" style="margin:15px 0">Delete "{{ post.title }}"?</p>
+                    <div class="post-top-divider"></div>
+                    <p class="post-description">Sure you wanna get rid of it? Forever?</p>
+                    <i><p class="post-text" style="margin:30px 0; padding: 0">Wasn't a very good one, eh?</p></i>
+                    <button class="button">Delete</button>
+                </div>
             </form>
         </div>
     </div>

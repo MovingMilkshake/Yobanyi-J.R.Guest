@@ -25,6 +25,7 @@ li {
 .container {
     max-width: 1180px;
     margin: 0 auto;
+    padding: 10px 5px;
     margin-top: 30px;
 }
 
@@ -35,6 +36,7 @@ li {
 
 .menu {
     display: flex;
+    flex-direction: column;
     color: white;
     background: rgba(92, 92, 92, 1);
     align-items: center;
@@ -48,9 +50,11 @@ li {
     font-weight: bold;
     font-size: 24px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .v-divider {
+    display: none;
     height: 30px;
     width: 2px;
     background: white;
@@ -69,6 +73,7 @@ li {
 
 .page-link {
     margin-right: 15px;
+    margin-bottom: 5px;
     font-size: 24px;
     cursor: pointer;
     color: white;
@@ -86,7 +91,6 @@ li {
 }
 
 .element {
-    width: 100%;
     background: rgba(244, 244, 244, 1);
     border: 3px solid rgba(0, 0, 0, 1);
     box-shadow: 2px 4px 0px #000000;
@@ -111,19 +115,20 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 15px;
+    padding: 0 7.5px;
 }
 
 .element-body-v {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 15px;
+    align-items: stretch;
+    padding: 0 7.5px;
 }
 
 .text {
     font-size: 24px;
     width: 260px;
+    margin-bottom: 15px;
     margin-bottom: 15px;
     overflow-wrap: break-word;
 }
@@ -209,7 +214,6 @@ li {
 
 
 .post {
-    width: 95%;
     margin-bottom: 15px;
     padding: 15px;
     padding-bottom: 0;
@@ -410,7 +414,6 @@ li {
 @media (max-width: 850px) {
     .container {
         margin-top: 0;
-        padding: 10px;
     }
     
     .content {
@@ -423,6 +426,7 @@ li {
 
     .element-body-h {
         flex-direction: column;
+        padding: 15px;
     }
 
     .about-h-box {
@@ -470,6 +474,19 @@ li {
 }
 
 @media (min-width: 850px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .element-body-v {
+        padding: 0 15px;
+    }
+
+    .element {
+        width: 100%
+    }
+
     .details {
         height: 0;
         position: sticky;
@@ -478,6 +495,22 @@ li {
 
     .flex-reverse {
         flex-direction: row;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    .title {
+        margin-bottom: 0;
+    }
+
+    .page-link {
+        margin-bottom: 0;
+    }
+
+    .v-divider {
+        display: block;
     }
 
     .left {

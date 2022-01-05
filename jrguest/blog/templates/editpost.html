@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Create Post {% endblock %}
+{% block title %} Edit Post {% endblock %}
 
 {% block content %}
 
 <div class="content flex-reverse">
     <div class="element">
-        <div class="element-header">Create Blog Post:</div>
+        <div class="element-header">Edit Blog Post:</div>
         <div class="element-body-v">
             <form class="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="button">Post</button>
+                <button class="button">Update</button>
             </form>
         </div>
     </div>

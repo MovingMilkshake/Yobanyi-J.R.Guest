@@ -12,7 +12,8 @@
             <div class="post">
                 <div class="post-header">
                     <p class="post-title">{{ post.title }}</p>
-                    <p class="post-date">{{ post.date|date:'d/m/Y' }}</p>
+                    <p class="post-date">{{ post.date|date:'d/m/Y' }} • <a class="link" href="{% url 'edit_post_page' post.pk %}">edit</a>
+                     • <a class="link" href="{% url 'delete_post_page' post.pk %}">delete</a></p>
                 </div>
                 <div class="post-body">
                     <p class="post-description">{{ post.description }}</p>
