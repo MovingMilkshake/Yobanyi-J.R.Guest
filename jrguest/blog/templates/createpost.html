@@ -1,40 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>Home</title>
-</head>
-<body style="background-image: url({% static 'images/background.png' %});">
-<header>
-    {% include 'menu.html' %}
-</header>
-<main>
-    <div class="container">
-        <div class="content flex-reverse">
-            <div class="element">
-                <div class="element-header">Create Blog Post:</div>
-                <div class="element-body-v">
-                    <form class="form" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button class="button">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="details right">
-                <div class="element">
-                    <div class="element-header">Details:</div>
-                    <div class="element-body-v">
-                        <p class="text">Comment by author: Hah, this font sucks</p>
-                    </div>
-                </div>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Create Post {% endblock %}
+
+{% block content %}
+
+<div class="content flex-reverse">
+    <div class="element">
+        <div class="element-header">Create Blog Post:</div>
+        <div class="element-body-v">
+            <form class="form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="details right">
+        <div class="element">
+            <div class="element-header">Details:</div>
+            <div class="element-body-v">
+                <p class="text">Comment by author: Hah, this font sucks</p>
             </div>
         </div>
     </div>
-</main>
-</body>
-</html>
+</div>
+
+{% endblock %}
