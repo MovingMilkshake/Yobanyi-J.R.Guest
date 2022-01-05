@@ -123,7 +123,6 @@ li {
 
 .text {
     font-size: 24px;
-    font-weight: bold;
     width: 260px;
     margin-bottom: 15px;
     overflow-wrap: break-word;
@@ -318,6 +317,29 @@ li {
     font-size: 24px;
     font-weight: bold;
     width: 260px;
+}
+
+
+.form {
+    width: 100%;
+    font-size: 24px;
+}
+
+.form-input {
+    width: calc(100% - 16px);
+    margin: 5px 0 25px 0;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 1px 2px 0px #000000;
+    border-radius: 10px;
+    font-family: Comfortaa;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.title-input {
+    height: 30px;
 }
 
 
