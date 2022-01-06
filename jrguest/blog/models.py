@@ -6,7 +6,7 @@ from django.utils import timezone
 class Post(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    date = models.DateField(default=timezone.now())
+    date = models.DateField(default=timezone.now)
     thumbnail = models.ImageField(null=True, blank=True, upload_to='thumbnails/')
     text = models.TextField()
 
