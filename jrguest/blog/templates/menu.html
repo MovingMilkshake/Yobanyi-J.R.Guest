@@ -1,4 +1,4 @@
-<div class="menu">
+<div class="menu spread-out">
     <div class="links">
         <a href="/" class="title">Yobanyi J.R. Guest</a>
         <div class="v-divider"></div>
@@ -6,5 +6,13 @@
         <a href="/blog/" class="page-link">Blog</a>
         <a href="/about/" class="page-link">About Me</a>
     </div>
-    <a href="/blog/create/" class="page-link">Create New Post</a>
+    <div class="links">
+        {% if user.is_authenticated %}
+        <a href="/blog/create/" class="page-link">Create New Post</a>
+        <a href="/logout/" class="page-link">Logout</a>
+        {% else %}
+        <a href="/login/" class="page-link">Login</a>
+        <a href="/register/" class="page-link">Register</a>
+        {% endif %}
+    </div>
 </div>
