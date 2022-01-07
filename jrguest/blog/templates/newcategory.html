@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Edit Post {% endblock %}
+{% block title %} Add New Category {% endblock %}
 
 {% block content %}
 
@@ -9,12 +9,12 @@
 
 <div class="content flex-reverse">
     <div class="element">
-        <div class="element-header">Edit Blog Post:</div>
+        <div class="element-header">Add New Category:</div>
         <div class="element-body-v">
-            <form class="form" method="POST" enctype="multipart/form-data">
+            <form class="form" method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <button class="button">Update</button>
+                <button class="button">Add</button>
             </form>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="element">
             <div class="element-header">Details:</div>
             <div class="element-body-v">
-                <p class="text">Searching...</p>
+                <p class="text">I couldn't figure out multiple forms on one page.</p>
             </div>
         </div>
     </div>

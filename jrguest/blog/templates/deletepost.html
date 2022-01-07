@@ -5,6 +5,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <div class="content flex-reverse">
     <div class="element">
         <div class="element-header">Delete Blog Post:</div>
@@ -25,10 +27,20 @@
         <div class="element">
             <div class="element-header">Details:</div>
             <div class="element-body-v">
-                <p class="text">Comment by author: Hah, this font sucks</p>
+                <p class="text">We Earth Men have a talent for ruining big, beautiful things.</p>
             </div>
         </div>
     </div>
 </div>
+
+{% else %}
+
+<p>You should've logged in before coming here.</p>
+<br>
+<p>Now...</p>
+<br>
+<p><i>Do you want you figgin' toasted?</i></p>
+
+{% endif %}
 
 {% endblock %}

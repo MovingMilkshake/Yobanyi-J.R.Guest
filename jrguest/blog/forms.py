@@ -1,17 +1,20 @@
 from django import forms
-from .models import Post
+from .models import Post, Category
+
+
+choices = Category.objects.all().values_list('title', 'title')
+choice_list = [choice for choice in choices]
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'description', 'text', 'thumbnail')
+        fields = ('title', 'category', 'description', 'text', 'thumbnail')
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Enter text here',
-                                            'class': 'form-input title-input'}),
-            'description': forms.Textarea(attrs={'placeholder': 'Enter text here, but a little longer',
-                                                 'class': 'form-input'}),
-            'text': forms.Textarea(attrs={'placeholder': 'Enter text here, but big',
-                                          'class': 'form-input'}),
-            'thumbnail': forms.FileInput(attrs={'class': 'form-input'}),
+                                            'class': 'title-input'}),
+            'category': forms.Select(choices=choice_list),
+            'description': forms.Textarea(attrs={'placeholder': 'Enter text here, but a little longer'}),
+            'text': forms.Textarea(attrs={'placeholder': 'Enter text here, but big'}),
+            'thumbnail': forms.FileInput(),
         }

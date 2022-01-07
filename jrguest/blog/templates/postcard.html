@@ -1,14 +1,19 @@
 <div class="post">
 
     <a href="{% url 'post_page' post.pk %}">
-        <div class="post-header">
-            <p class="post-title">{{ post.title }}</p>
-            <p class="post-date">{{ post.date|date:'d/m/Y' }} • <a class="link" href="{% url 'edit_post_page' post.pk %}">edit</a>
-             • <a class="link" href="{% url 'delete_post_page' post.pk %}">delete</a></p>
+        <div class="post-header spread-out">
+            <p class="post-date">{{ post.category }}</p>
+            <p class="post-date">{{ post.date|date:'d/m/Y' }}
+                {% if user.is_authenticated %}
+                • <a class="link" href="{% url 'edit_post_page' post.pk %}">edit</a>
+                • <a class="link" href="{% url 'delete_post_page' post.pk %}">delete</a>
+                {% endif %}
+            </p>
         </div>
     </a>
     <a href="{% url 'post_page' post.pk %}">
         <div class="post-body">
+            <p class="post-title">{{ post.title }}</p>
             <p class="post-description">{{ post.description }}</p>
             {% if post.thumbnail %}
             <div class="post-top-divider"></div>

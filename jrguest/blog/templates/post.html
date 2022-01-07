@@ -10,12 +10,16 @@
         <div class="element-header">Blog Post:</div>
         <div class="element-body-v">
             <div class="post">
-                <div class="post-header">
-                    <p class="post-title">{{ post.title }}</p>
-                    <p class="post-date">{{ post.date|date:'d/m/Y' }} • <a class="link" href="{% url 'edit_post_page' post.pk %}">edit</a>
-                     • <a class="link" href="{% url 'delete_post_page' post.pk %}">delete</a></p>
+                <div class="post-header spread-out">
+                    <p class="post-date">{{ post.date|date:'d/m/Y' }}
+                        {% if user.is_authenticated %}
+                        • <a class="link" href="{% url 'edit_post_page' post.pk %}">edit</a>
+                        • <a class="link" href="{% url 'delete_post_page' post.pk %}">delete</a>
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="post-body">
+                    <p class="post-title">{{ post.title }}</p>
                     <p class="post-description">{{ post.description }}</p>
                     {% if post.thumbnail %}
                     <div class="post-top-divider"></div>
@@ -43,6 +47,7 @@
         <div class="element">
             <div class="element-header">Details:</div>
             <div class="element-body-v">
+                <p class="text">Category: {{ post.category }}</p>
                 <p class="text">Comment by author: Hah, this font sucks</p>
             </div>
         </div>

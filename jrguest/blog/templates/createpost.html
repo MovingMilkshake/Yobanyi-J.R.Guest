@@ -5,13 +5,15 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <div class="content flex-reverse">
     <div class="element">
         <div class="element-header">Create Blog Post:</div>
         <div class="element-body-v">
             <form class="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form }}
                 <button class="button">Post</button>
             </form>
         </div>
@@ -20,10 +22,21 @@
         <div class="element">
             <div class="element-header">Details:</div>
             <div class="element-body-v">
-                <p class="text">Comment by author: Hah, this font sucks</p>
+                <p class="text">Sometimes I wonder about the Creator of the Universe.</p>
+                <a class="button" href="{% url 'add_category_page' %}">Add New Category</a>
             </div>
         </div>
     </div>
 </div>
+
+{% else %}
+
+<p>You should've logged in before coming here.</p>
+<br>
+<p>Now...</p>
+<br>
+<p><i>Do you want you figgin' toasted?</i></p>
+
+{% endif %}
 
 {% endblock %}
